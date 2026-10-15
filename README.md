@@ -60,7 +60,7 @@ The content calendar tools arrive with the next Keytomic release. Until then the
 
 ## Support
 
-Write to support@keytomic.com. The privacy policy is at https://keytomic.com/privacy-policy.
+Write to hi@keytomic.com. The privacy policy is at https://keytomic.com/privacy-policy.
 
 ## License
 
