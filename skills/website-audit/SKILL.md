@@ -20,7 +20,6 @@ A Website Audit crawls a site's saved domain and reports per category: status, f
    - `list_audit_check_rows` for every row of a check.
    - `list_audit_evidence` for every row of a finding, when `evidence.truncated` is true.
    - `list_audit_pages` for the crawl state of each URL.
-   - `list_audit_links` for broken or external links.
 
 ## The report
 

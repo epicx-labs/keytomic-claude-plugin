@@ -39,7 +39,7 @@ claude --plugin-dir ./keytomic-claude-plugin
 
 ## Sign in
 
-The first tool call asks you to sign in to Keytomic in your browser and to choose a workspace. In Claude Code, run `/mcp`, select **keytomic**, and complete the sign-in. The connection is a Connected App with these MCP Scopes: workspace read and write, audit read and run, Search Console read and write, and content read and write. You can remove the Connected App at any time on the Connected apps page in Keytomic.
+The first tool call asks you to sign in to Keytomic in your browser and to choose a workspace. In Claude Code, run `/mcp`, select **keytomic**, and complete the sign-in. The connection is a Connected App with these MCP Scopes: workspace read and write, audit read and run, and Search Console read and write. The content read and write scopes arrive with the next Keytomic release. You can remove the Connected App at any time on the Connected apps page in Keytomic.
 
 ## What the plugin sends and reads
 
