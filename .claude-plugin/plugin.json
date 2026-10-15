@@ -12,6 +12,9 @@
   "repository": "https://github.com/epicx-labs/keytomic-claude-plugin",
   "license": "MIT",
   "privacyPolicyUrl": "https://keytomic.com/privacy-policy",
+  "termsOfServiceUrl": "https://keytomic.com/term-and-conditions",
+  "documentationUrl": "https://keytomic.com/docs/mcp",
+  "supportUrl": "https://keytomic.com/mcp",
   "keywords": [
     "seo",
     "search-console",
