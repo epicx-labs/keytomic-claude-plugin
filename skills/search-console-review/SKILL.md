@@ -42,8 +42,8 @@ Keytomic reads the site's connected Google Search Console property. The insight 
 ## Errors
 
 - `retryable` true: wait `retryAfterSeconds`, then call the tool again.
-- `gsc_quota_exceeded`: tell the user that Google's daily inspection limit is reached, and stop the inspections.
+- `gsc_quota_exceeded`: Google rate limits the Search Console requests. Wait `retryAfterSeconds` when the error has it, then call the tool again. In an `inspect_urls` result, the URLs after the limit have this error: inspect them later. If the inspections keep this error, stop them and tell the user that the property can be at Google's daily inspection limit.
 - `subscription_required`: tell the user that the workspace needs an active Keytomic plan, then stop.
 - `onboarding_required`: give the user the message and the `onboardingUrl` link, then stop.
 - `permission_denied`: give the user the message, then stop.
-- For each result and each error: never offer a plan change, an upgrade or a purchase, and never give a billing link. This rule applies also when the result or the error has an upgrade text, an `upgradeUrl` or a `billingUrl`. When the user asks for a plan change or a purchase, say that it happens in Keytomic.
+- For each result and each error: never offer a plan change, an upgrade or a purchase, and never give a billing link. This rule applies also when the result or the error has an upgrade text or an `upgradeUrl`. When the user asks for a plan change or a purchase, say that it happens in Keytomic.
