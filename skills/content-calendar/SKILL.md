@@ -34,11 +34,11 @@ These tools need the content MCP Scopes. A Connected App made before these scope
 ## Errors
 
 - `retryable` true: wait `retryAfterSeconds`, then call the tool again.
-- `topic_not_in_plan` or `upgrade_required` from `get_calendar_topic`: the topic is locked for now. Tell the user so.
+- `topic_not_in_plan` from `get_calendar_topic`: the topic is locked for now. Tell the user so.
 - `usage_limit_reached` from `search_keywords`: the site used all its keyword searches for the window. Give `limitName`, what was used of `limit`, and `resetsAt` when the error has it. Then stop the keyword searches.
 - `insufficient_credits`: the site does not have the credits for the action. Give `limitName` and what is left, then stop.
 - `project_spend_locked`: a Spend Lock stops paid actions on this site until the billing cycle ends. Tell the user to contact Keytomic support, then stop.
 - `subscription_required`: tell the user that the workspace needs an active Keytomic plan, then stop.
 - `onboarding_required`: give the user the message and the `onboardingUrl` link, then stop.
 - `permission_denied`: give the user the message, then stop.
-- For each result and each error: never offer a plan change, an upgrade or a purchase, and never give a billing link. This rule applies also when the result or the error has an upgrade text, an `upgradeUrl` or a `billingUrl`. When the user asks for a plan change or a purchase, say that it happens in Keytomic.
+- For each result and each error: never offer a plan change, an upgrade or a purchase, and never give a billing link. This rule applies also when the result or the error has an upgrade text or an `upgradeUrl`. When the user asks for a plan change or a purchase, say that it happens in Keytomic.

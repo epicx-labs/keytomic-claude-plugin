@@ -6,7 +6,7 @@ Keytomic is an SEO platform. This plugin connects Claude to one Keytomic workspa
 
 - **Website Audit**: start an audit of a site, follow it to the end, and read the findings by category, with the affected pages and the recommended fix.
 - **Search Console review**: find the top, new, improving and declining queries and pages, the low-hanging fruits, keyword cannibalization, zombie pages, question queries, and the raw Search Analytics data.
-- **Workspace setup**: read a site's brand profile, settings, author profiles and Usage Limits, and edit them after your yes.
+- **Workspace setup**: read a site's brand profile, settings, author profiles and Usage Limits. Edit the brand profile, the Article Settings, the indexing settings and the author profiles after your yes.
 - **Content calendar**: read the planned topics by day, follow a calendar run, and research keywords.
 
 ## Requirements
@@ -41,7 +41,7 @@ claude --plugin-dir ./keytomic-claude-plugin
 
 The first tool call asks you to sign in to Keytomic in your browser and to choose a workspace. In Claude Code, run `/mcp`, select **keytomic**, and complete the sign-in. The connection is a Connected App with these MCP Scopes: workspace read and write, audit read and run, Search Console read and write, and content read and write. You can remove the Connected App at any time on the Connected apps page in Keytomic.
 
-If you connected Keytomic before the content scopes were available, the server refuses the content calendar tools. Claude shows an authorization or permission error for them, sometimes with the text "Keytomic needs approval". The other tools continue to operate. Remove the Connected App on the Connected apps page in Keytomic, then connect Keytomic again and approve all the scopes.
+If you connected Keytomic before the content scopes were available, the server refuses the content calendar tools with an HTTP 403 `insufficient_scope` response. Claude shows an authorization or insufficient scope error for them, sometimes with the text "Keytomic needs approval". This error is not the `permission_denied` tool error, and a role change does not correct it. The other tools continue to operate. First, sign in to Keytomic again and approve all the scopes. In Claude Code, run `/mcp`, select **keytomic**, and sign in again. If the error continues, remove the Connected App on the Connected apps page in Keytomic, then connect Keytomic again and approve all the scopes.
 
 ## What the plugin sends and reads
 

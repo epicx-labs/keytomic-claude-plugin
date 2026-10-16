@@ -43,4 +43,4 @@ The brand profile is the owner's. Content generation uses it only after the owne
 - `subscription_required`: tell the user that the workspace needs an active Keytomic plan, then stop.
 - `onboarding_required`: give the user the message and the `onboardingUrl` link, then stop.
 - `permission_denied`: give the user the message, then stop.
-- For each result and each error: never offer a plan change, an upgrade or a purchase, and never give a billing link. This rule applies also when the result or the error has an upgrade text, an `upgradeUrl` or a `billingUrl`. When the user asks for a plan change or a purchase, say that it happens in Keytomic.
+- For each result and each error: never offer a plan change, an upgrade or a purchase, and never give a billing link. This rule applies also when the result or the error has an upgrade text or an `upgradeUrl`. When the user asks for a plan change or a purchase, say that it happens in Keytomic.
