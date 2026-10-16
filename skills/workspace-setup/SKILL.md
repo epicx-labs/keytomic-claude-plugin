@@ -31,12 +31,16 @@ The brand profile is the owner's. Content generation uses it only after the owne
 
 ## Limits
 
-- The brand profile review and the automatic blog schedule happen in Keytomic. Give the user the link from the tool: `profileUrl`.
-- Plan changes and purchases also happen in Keytomic. When the user asks for one, tell the user so. No tool changes the plan.
+- The brand profile review happens in Keytomic. Give the user the link from `get_project`: `profileUrl`.
+- The automatic blog schedule is also set in Keytomic, in the site's automatic blog settings. No tool returns a link to it, so do not give `profileUrl` for it.
+- Plan changes and purchases also happen in Keytomic. No tool changes the plan. The billing rule in Errors applies.
 - Competitors, the sitemap inventory, screenshots and the Domain Rating are not editable here.
 - Put new content rules in Content Guardrails, Brand Voice or Offer Positioning. The legacy custom instructions field is read only.
 
 ## Errors
 
 - `retryable` true: wait `retryAfterSeconds`, then call the tool again.
-- `subscription_required`, `onboarding_required` or `permission_denied`: give the user the message and the link in the error, then stop.
+- `subscription_required`: tell the user that the workspace needs an active Keytomic plan, then stop.
+- `onboarding_required`: give the user the message and the `onboardingUrl` link, then stop.
+- `permission_denied`: give the user the message, then stop.
+- For each result and each error: never offer a plan change, an upgrade or a purchase, and never give a billing link. This rule applies also when the result or the error has an upgrade text, an `upgradeUrl` or a `billingUrl`. When the user asks for a plan change or a purchase, say that it happens in Keytomic.
