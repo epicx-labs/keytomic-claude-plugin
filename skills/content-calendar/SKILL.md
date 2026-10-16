@@ -7,7 +7,7 @@ description: Read a Keytomic site's content calendar, follow a calendar run, and
 
 The content calendar holds a site's planned topics. Each topic has a scheduled day, a primary keyword with its search volume, difficulty and demand trend, and the planning fields: intent, funnel stage, audience, angles and author override. The daily automation writes the article on the scheduled day and, with automatic publishing on, publishes it.
 
-These tools need the content MCP Scopes. When the server does not list them, tell the user that the content calendar tools are not available on this Keytomic release yet, and stop.
+These tools need the content MCP Scopes. A Connected App made before these scopes existed does not have them, and the tools return an error that Keytomic needs approval. Then tell the user to remove the Connected App on the Connected apps page in Keytomic, connect Keytomic again, and approve all the scopes. Stop until the user connects again.
 
 ## Steps
 
@@ -34,5 +34,5 @@ These tools need the content MCP Scopes. When the server does not list them, tel
 ## Errors
 
 - `retryable` true: wait `retryAfterSeconds`, then call the tool again.
-- `topic_not_in_plan`: the workspace cannot open this topic for now. Tell the user so.
+- `get_calendar_topic` returns an error that the workspace cannot open the topic: the topic is locked for now. Tell the user so. Do not offer a plan change.
 - `subscription_required`, `onboarding_required` or `permission_denied`: give the user the message and the link in the error, then stop.

@@ -11,7 +11,7 @@ Keytomic is an SEO platform. This plugin connects Claude to one Keytomic workspa
 
 ## Requirements
 
-- A Keytomic workspace on a paid plan. An unpaid workspace, or one still in Onboarding, gets an error with a link to Keytomic instead of data.
+- A Keytomic workspace on a paid plan or in a trial. A workspace with no active plan, or one still in Onboarding, gets an error with a link to Keytomic instead of data.
 - A Google Search Console property connected to the site, for the Search Console tools. The other tools do not need it.
 - Claude Code 2.1.292 or later for the one-line install below.
 
@@ -39,7 +39,9 @@ claude --plugin-dir ./keytomic-claude-plugin
 
 ## Sign in
 
-The first tool call asks you to sign in to Keytomic in your browser and to choose a workspace. In Claude Code, run `/mcp`, select **keytomic**, and complete the sign-in. The connection is a Connected App with these MCP Scopes: workspace read and write, audit read and run, and Search Console read and write. The content read and write scopes arrive with the next Keytomic release. You can remove the Connected App at any time on the Connected apps page in Keytomic.
+The first tool call asks you to sign in to Keytomic in your browser and to choose a workspace. In Claude Code, run `/mcp`, select **keytomic**, and complete the sign-in. The connection is a Connected App with these MCP Scopes: workspace read and write, audit read and run, Search Console read and write, and content read and write. You can remove the Connected App at any time on the Connected apps page in Keytomic.
+
+If you connected Keytomic before the content scopes were available, the content calendar tools return an error that Keytomic needs approval. Remove the Connected App on the Connected apps page in Keytomic, then connect Keytomic again and approve all the scopes.
 
 ## What the plugin sends and reads
 
@@ -55,8 +57,6 @@ Tool calls that spend credits or start work, such as a new audit or a keyword se
 | `search-console-review` | Answer questions about Google Search performance with the insight tools |
 | `workspace-setup` | Read and edit the brand profile, the settings and the author profiles |
 | `content-calendar` | Read the planned topics, follow a calendar run, and research keywords |
-
-The content calendar tools arrive with the next Keytomic release. Until then the `content-calendar` skill reports that the tools are not available.
 
 ## Support
 
