@@ -1,7 +1,7 @@
 {
   "name": "keytomic",
   "displayName": "Keytomic",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "SEO work on your Keytomic workspace from Claude: Website Audits, Search Console insights, brand profile and settings, and the content calendar.",
   "author": {
     "name": "epicX",

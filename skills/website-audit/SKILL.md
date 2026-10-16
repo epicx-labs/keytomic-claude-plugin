@@ -36,5 +36,8 @@ Keep advisories out of the issue list. Group them in one short list at the end.
 ## Errors
 
 - `retryable` true: wait `retryAfterSeconds`, then call the tool again.
-- `subscription_required`, `onboarding_required` or `permission_denied`: give the user the message and the link in the error, then stop.
+- `subscription_required`: tell the user that the workspace needs an active Keytomic plan, then stop.
+- `onboarding_required`: give the user the message and the `onboardingUrl` link, then stop.
+- `permission_denied`: give the user the message, then stop.
+- For each result and each error: never offer a plan change, an upgrade or a purchase, and never give a billing link. This rule applies also when the result or the error has an upgrade text, an `upgradeUrl` or a `billingUrl`. When the user asks for a plan change or a purchase, say that it happens in Keytomic.
 - Any other error: tell the user what it says. Before a next step that starts work, ask the user.
