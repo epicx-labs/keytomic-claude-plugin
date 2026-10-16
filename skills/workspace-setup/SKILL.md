@@ -32,6 +32,7 @@ The brand profile is the owner's. Content generation uses it only after the owne
 ## Limits
 
 - The brand profile review and the automatic blog schedule happen in Keytomic. Give the user the link from the tool: `profileUrl`.
+- Plan changes and purchases also happen in Keytomic. When the user asks for one, tell the user so. No tool changes the plan.
 - Competitors, the sitemap inventory, screenshots and the Domain Rating are not editable here.
 - Put new content rules in Content Guardrails, Brand Voice or Offer Positioning. The legacy custom instructions field is read only.
 

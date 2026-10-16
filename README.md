@@ -41,7 +41,7 @@ claude --plugin-dir ./keytomic-claude-plugin
 
 The first tool call asks you to sign in to Keytomic in your browser and to choose a workspace. In Claude Code, run `/mcp`, select **keytomic**, and complete the sign-in. The connection is a Connected App with these MCP Scopes: workspace read and write, audit read and run, Search Console read and write, and content read and write. You can remove the Connected App at any time on the Connected apps page in Keytomic.
 
-If you connected Keytomic before the content scopes were available, the content calendar tools return an error that Keytomic needs approval. Remove the Connected App on the Connected apps page in Keytomic, then connect Keytomic again and approve all the scopes.
+If you connected Keytomic before the content scopes were available, the server refuses the content calendar tools. Claude shows an authorization or permission error for them, sometimes with the text "Keytomic needs approval". The other tools continue to operate. Remove the Connected App on the Connected apps page in Keytomic, then connect Keytomic again and approve all the scopes.
 
 ## What the plugin sends and reads
 
