@@ -24,7 +24,7 @@ These tools need the content MCP Scopes. When the server does not list them, tel
    | Keyword ideas with volume, difficulty, competition, CPC and trend | `search_keywords` |
 
 3. Before `search_keywords`, read `get_keyword_search_usage`. One call spends 1 of the site's monthly keyword searches, which all members of the site share. Tell the user what a search costs and what is left, then get a yes. Give the seed keyword and the related keywords with their numbers. Keywords with no search volume are for reference only.
-4. In a trial, `list_calendar_topics` returns only the unlocked topics and a `lockedTopicCount`. Say how many topics are locked and give the billing link from the result.
+4. When the workspace’s plan includes only some topics, `list_calendar_topics` returns only those and a `lockedTopicCount`. Say how many topics the plan does not include.
 
 ## The report
 
@@ -34,5 +34,5 @@ These tools need the content MCP Scopes. When the server does not list them, tel
 ## Errors
 
 - `retryable` true: wait `retryAfterSeconds`, then call the tool again.
-- `upgrade_required`: the topic is locked in the trial. Give the user the billing link.
+- `topic_not_in_plan`: the workspace’s plan does not include the topic. Tell the user so.
 - `subscription_required`, `onboarding_required` or `permission_denied`: give the user the message and the link in the error, then stop.
