@@ -1,6 +1,6 @@
 ---
 name: workspace-setup
-description: Read and edit a Keytomic site's brand profile, Article Settings, indexing settings, author profiles, plan and Usage Limits. Use when the user asks what Keytomic knows about their brand, wants to change the brand voice, audience, guardrails, offer, tone, article length, authors, or post URL prefix, or asks what their plan allows.
+description: Read and edit a Keytomic site's brand profile, Article Settings, indexing settings, author profiles, plan, Usage Limits and integrations. Use when the user asks what Keytomic knows about their brand, wants to change the brand voice, audience, guardrails, offer, tone, article length, authors, or post URL prefix, or asks what their plan allows or which integrations a site has.
 ---
 
 # Workspace setup
@@ -14,6 +14,7 @@ The brand profile is the owner's. Content generation uses it only after the owne
    - `get_project`: name and domain, the brand profile (metadata, audience, Brand Voice, Content Guardrails, Offer Positioning, competitors), whether the review is complete, the setup checklist and the Domain Rating.
    - `get_project_settings`: Article Settings, indexing settings, the automatic blog schedule and the author profiles with the default author.
    - `get_usage`: the plan, the subscription state, and each Usage Limit with what is used and what is left.
+   - `list_integrations`: Search Console, Google Analytics, Bing Webmaster, each Shopify store and each publishing destination, with the status of each. An integration that is not connected, or needs attention, has a `connectUrl`. Only the owner connects or fixes it, in Keytomic.
 3. Report the state. Name what is missing from the setup checklist, whether the review is complete, and the Usage Limits that are near their cap.
 4. For an edit, show the user the exact fields and the new values, then get a yes, then call the tool:
 
