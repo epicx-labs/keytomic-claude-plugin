@@ -1,6 +1,6 @@
 {
   "name": "keytomic",
-  "description": "The Keytomic plugin for Claude: Website Audits, Search Console insights, brand profile and settings, and the content calendar on your Keytomic workspace.",
+  "description": "The Keytomic plugin for Claude: Website Audits, Search Console insights, brand profile and settings, the content calendar, and articles on your Keytomic workspace.",
   "owner": {
     "name": "epicX",
     "email": "hi@keytomic.com"
@@ -9,7 +9,7 @@
     {
       "name": "keytomic",
       "source": "./",
-      "description": "SEO work on your Keytomic workspace from Claude: Website Audits, Search Console insights, brand profile and settings, and the content calendar."
+      "description": "SEO work on your Keytomic workspace from Claude: Website Audits, Search Console insights, brand profile and settings, the content calendar, and articles."
     }
   ]
 }
