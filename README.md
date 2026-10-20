@@ -7,7 +7,7 @@ Keytomic is an SEO platform. This plugin connects Claude to one Keytomic workspa
 - **Website Audit**: start an audit of a site, follow it to the end, and read the findings by category, with the affected pages and the recommended fix.
 - **Search Console review**: find the top, new, improving and declining queries and pages, the low-hanging fruits, keyword cannibalization, zombie pages, question queries, and the raw Search Analytics data.
 - **Workspace setup**: read a site's brand profile, settings, author profiles, Usage Limits and integrations. Edit the brand profile, the Article Settings, the indexing settings and the author profiles after your yes.
-- **Content calendar**: research keywords, read and edit the planned topics, add topics, start a calendar run and follow it, and write, read and edit articles. Each action that uses credits happens only after your yes.
+- **Content calendar**: research keywords, read and edit the planned topics, add topics, start a calendar run and follow it, write, read and edit articles, and generate their hero images. Each action that uses credits happens only after your yes.
 
 ## Requirements
 
@@ -47,7 +47,7 @@ If the Connected App does not have a scope, the server refuses the tools of that
 
 The plugin has no code of its own. It declares one remote MCP server, `https://app.keytomic.com/mcp`, and its skills are text files. Claude sends each tool call to that server with your sign-in token. The server reads and writes only the data of the workspace you chose. The plugin sends data to no other destination.
 
-Tool calls that spend credits or start work, such as a new audit, a keyword search, a calendar run or an article, happen only after you say yes. Edits to the brand profile and the settings spend no credits.
+Tool calls that spend credits or start work, such as a new audit, a keyword search, a calendar run, an article or a hero image, happen only after you say yes. Edits to the brand profile and the settings spend no credits.
 
 ## Skills
 
@@ -56,7 +56,7 @@ Tool calls that spend credits or start work, such as a new audit, a keyword sear
 | `website-audit` | Run or read a Website Audit and get a report of the findings |
 | `search-console-review` | Answer questions about Google Search performance with the insight tools |
 | `workspace-setup` | Read and edit the brand profile, the settings and the author profiles, and read the integrations |
-| `content-calendar` | Research keywords, plan and edit the calendar topics, start a calendar run, and write and edit articles |
+| `content-calendar` | Research keywords, plan and edit the calendar topics, start a calendar run, write and edit articles, and generate hero images |
 
 ## Support
 
