@@ -1,6 +1,6 @@
 ---
 name: content-calendar
-description: Plan and read a Keytomic site's content calendar, research keywords, and write, read and edit its articles. Use when the user asks what articles are planned or scheduled, wants to add, move or edit topics, wants keyword ideas with search volume, wants to start a calendar run or follow one, wants an article written now, or wants to read or edit an article.
+description: Plan and read a Keytomic site's content calendar, research keywords, write, read and edit its articles, and generate their hero images. Use when the user asks what articles are planned or scheduled, wants to add, move or edit topics, wants keyword ideas with search volume, wants to start a calendar run or follow one, wants an article written now, wants to read or edit an article, or wants a new hero image for an article.
 ---
 
 # Content calendar
@@ -29,14 +29,18 @@ These tools need the content MCP Scopes. The tools that change data need both `c
    | The article of a topic, written now | `generate_article` |
    | The text of an article | `get_draft` |
    | A change to an article: title, slug, SEO title and description, text | `update_draft` |
+   | A new hero image for an article | `generate_hero_image`, with `creativeDirection` and `exclusions` from the user's words |
 
 3. Before each paid tool, tell the user what the call uses and what is left, then get a yes:
    - `search_keywords` and `create_calendar_topic` use 1 of the site's monthly keyword searches each. Read `get_keyword_search_usage` first.
    - `add_keywords_to_calendar` uses no keyword search. For `add_keywords_to_calendar` and `create_calendar_topic`, the site must have articles left this month, or Article Credits, for the new topics.
-   - `start_content_calendar` and `generate_article`: call the tool without `confirm` first. It returns a plan and starts nothing. Show the plan to the user. Call again with `confirm` set to `true` only after the user agrees. For `generate_article`, add `useArticleCredit` set to `true` when the plan uses an Article Credit.
+   - `generate_hero_image` uses 1 Blog Hero Credit. Keytomic also calls these credits image credits.
+   - `start_content_calendar`, `generate_article` and `generate_hero_image`: call the tool without `confirm` first. It returns a plan and starts nothing. Show the plan to the user. Call again with `confirm` set to `true` only after the user agrees. For `generate_article`, add `useArticleCredit` set to `true` when the plan uses an Article Credit.
 4. For `search_keywords`, give the seed keyword and the related keywords with their numbers. Keywords with no search volume are for reference only. For `add_keywords_to_calendar`, send each keyword with its `searchVolume`, `difficulty` and `searchTrend` from `search_keywords`, unchanged.
 5. When `add_keywords_to_calendar` or `create_calendar_topic` returns collisions, nothing was added. Show the collisions to the user. Call again with `allowCannibalization` set to `true` only after the user agrees.
 6. After `start_content_calendar` starts a run, follow it with `get_content_calendar_progress` until it ends. After `generate_article` starts an article, follow the topic with `get_calendar_topic` (`generationStatus`), then read the article with `get_draft`.
+   - When a `generate_hero_image` call with `confirm` times out, read the article with `get_draft` before you call again. The image can still finish, and a second call uses a second Blog Hero Credit.
+   - When `generate_hero_image` returns `generated_not_attached`, the credit is used and the image is in the Image Studio Media Library. Tell the user to attach it in Content Studio.
 7. For `update_calendar_topic` and `update_draft`, show the user the exact fields and the new values, then get a yes. Send only the fields that change.
    - Read the article with `get_draft` just before `update_draft`. `contentMarkdown` replaces the whole text, and the last save wins. Keep each `[[youtube:ID]]` token and each image URL that stays in the article.
    - Tell the user that an edit to a published article does not change the live page until the article is published again.
@@ -47,7 +51,7 @@ These tools need the content MCP Scopes. The tools that change data need both `c
 - List the topics by scheduled day. For each: the title, the primary keyword with its volume, the review status, and whether the article is written or published.
 - For a calendar run: the status, each stage with its summary, the number of topics it plans, and the message Keytomic shows when it stopped.
 - For an article: the title, the SEO title and description, the word count, the publication status with the published URL, and the `contentStudioUrl` link to the article in Keytomic.
-- After an edit or an add: what changed, and what each paid call used. For what is left, read `get_keyword_search_usage` or `get_usage`. The plan of `start_content_calendar` and `generate_article` gives the counts before the call.
+- After an edit or an add: what changed, and what each paid call used. For what is left, read `get_keyword_search_usage` or `get_usage`. The plan of `start_content_calendar`, `generate_article` and `generate_hero_image` gives the counts before the call.
 
 ## Errors
 
@@ -63,7 +67,7 @@ These tools need the content MCP Scopes. The tools that change data need both `c
 - `active_seo_workflow_exists`: an SEO automation run is in progress. Tell the user to start the calendar run after it ends.
 - `no_calendar_days_left`: give the user the message, then stop.
 - `usage_limit_reached`: the site used all of a Usage Limit, such as its keyword searches, for the window. Give `limitName`, what was used of `limit`, and `resetsAt` when the error has it. Then stop the calls that use it.
-- `insufficient_credits`: the site does not have the credits for the action. Give `limitName` and what is left, then stop.
+- `insufficient_credits`: the site does not have the credits for the action. Give `limitName` and what is left when the error has them, then stop.
 - `project_spend_locked`: a Spend Lock stops paid actions on this site until the billing cycle ends. Tell the user to contact Keytomic support, then stop.
 - `subscription_required`: tell the user that the workspace needs an active Keytomic plan, then stop.
 - `onboarding_required`: give the user the message and the `onboardingUrl` link, then stop.
