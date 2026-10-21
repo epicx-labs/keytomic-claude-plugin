@@ -7,7 +7,7 @@ Keytomic is an SEO platform. This plugin connects Claude to one Keytomic workspa
 - **Website Audit**: start an audit of a site, follow it to the end, and read the findings by category, with the affected pages and the recommended fix.
 - **Search Console review**: find the top, new, improving and declining queries and pages, the low-hanging fruits, keyword cannibalization, zombie pages, question queries, and the raw Search Analytics data.
 - **Workspace setup**: read a site's brand profile, settings, author profiles, Usage Limits and integrations. Edit the brand profile, the Article Settings, the indexing settings and the author profiles after your yes.
-- **Content calendar**: research keywords, read and edit the planned topics, add topics, start a calendar run and follow it, write, read and edit articles, and generate their hero images. Each action that uses credits happens only after your yes.
+- **Content calendar**: research keywords, read and edit the planned topics, add topics, start a calendar run and follow it, write, read and edit articles, and generate their hero images. In Claude, the article shows in the chat, and you can edit it there when your connection can edit content. Each action that uses credits happens only after your yes.
 
 ## Requirements
 
