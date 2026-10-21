@@ -42,6 +42,7 @@ These tools need the content MCP Scopes. The tools that change data need both `c
    - When a `generate_hero_image` call with `confirm` times out, read the article with `get_draft` before you call again. The image can still finish, and a second call uses a second Blog Hero Credit.
    - When `generate_hero_image` returns `generated_not_attached`, the credit is used and the image is in the Image Studio Media Library. Tell the user to attach it in Content Studio.
 7. For `update_calendar_topic` and `update_draft`, show the user the exact fields and the new values, then get a yes. Send only the fields that change.
+   - `get_draft` gives `canEdit`. When it is false, this connection cannot save edits: the Connected App does not have `content:write`, or the user's role does not give the permission. Tell the user so before an edit.
    - Read the article with `get_draft` just before `update_draft`. `contentMarkdown` replaces the whole text, and the last save wins. Keep each `[[youtube:ID]]` token and each image URL that stays in the article.
    - Tell the user that an edit to a published article does not change the live page until the article is published again.
 8. When the workspace can open only some topics for now, the content tools return only those and a `lockedTopicCount`. Say how many topics are locked for now. The billing rule in Errors applies.
@@ -50,7 +51,7 @@ These tools need the content MCP Scopes. The tools that change data need both `c
 
 - List the topics by scheduled day. For each: the title, the primary keyword with its volume, the review status, and whether the article is written or published.
 - For a calendar run: the status, each stage with its summary, the number of topics it plans, and the message Keytomic shows when it stopped.
-- For an article: the title, the SEO title and description, the word count, the publication status with the published URL, and the `contentStudioUrl` link to the article in Keytomic.
+- For an article: the title, the primary keyword, the scheduled day, the author, the SEO title and description, the word count, the publication status with the published URL, and the `contentStudioUrl` link to the article in Keytomic.
 - After an edit or an add: what changed, and what each paid call used. For what is left, read `get_keyword_search_usage` or `get_usage`. The plan of `start_content_calendar`, `generate_article` and `generate_hero_image` gives the counts before the call.
 
 ## Errors
