@@ -1,6 +1,6 @@
 {
   "name": "keytomic",
-  "description": "AI SEO with Keytomic: AI SEO automation for Google and AI search, in Claude: run SEO audits; read Search Console performance, top, new, improving and declining rankings, low-hanging fruits, underperforming pages, keyword cannibalization, zombie pages and question queries; inspect URLs and submit sitemaps; research keywords; plan and run your content calendar; write and edit articles and generate hero images; manage your brand profile, authors and settings; and check your plan usage and integrations, on your Keytomic workspace.",
+  "description": "The Keytomic plugin for Claude. AI SEO automation in Claude for Google and AI search: SEO audits, Search Console insights, keyword research, content calendar, articles and hero images. Find top, new, improving and declining rankings, low-hanging fruits, underperforming pages, keyword cannibalization, zombie pages and question queries; inspect URLs and submit sitemaps; plan and run your content calendar; write and edit articles; manage your brand profile, authors and settings; and check plan usage and integrations on your Keytomic workspace.",
   "owner": {
     "name": "Keytomic",
     "email": "hi@keytomic.com"
@@ -9,7 +9,7 @@
     {
       "name": "keytomic",
       "source": "./",
-      "description": "AI SEO automation for Google and AI search, in Claude: run SEO audits; read Search Console performance, top, new, improving and declining rankings, low-hanging fruits, underperforming pages, keyword cannibalization, zombie pages and question queries; inspect URLs and submit sitemaps; research keywords; plan and run your content calendar; write and edit articles and generate hero images; manage your brand profile, authors and settings; and check your plan usage and integrations, on your Keytomic workspace."
+      "description": "AI SEO automation in Claude for Google and AI search: SEO audits, Search Console insights, keyword research, content calendar, articles and hero images. Find top, new, improving and declining rankings, low-hanging fruits, underperforming pages, keyword cannibalization, zombie pages and question queries; inspect URLs and submit sitemaps; plan and run your content calendar; write and edit articles; manage your brand profile, authors and settings; and check plan usage and integrations on your Keytomic workspace."
     }
   ]
 }
