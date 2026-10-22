@@ -6,7 +6,7 @@ This plugin brings Keytomic, the end-to-end AI SEO agent, into Claude. It connec
 
 Keytomic is the AI SEO agent that runs the whole SEO cycle for your site, for Google and AI search:
 
-1. **Research**: finds the keywords and topics that your customers search for and ask AI assistants about.
+1. **Research**: finds the keywords and topics that your customers search for on Google and in AI search.
 2. **Write**: plans your content calendar and writes on-brand articles with images.
 3. **Publish**: publishes to your site and gets your pages indexed.
 4. **Monitor**: tracks your rankings, your Search Console data, and how often AI search mentions your brand.
