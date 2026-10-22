@@ -1,4 +1,4 @@
-# SEO with Keytomic
+# AI SEO with Keytomic
 
 Keytomic is an AI SEO automation platform for Google and AI search. This plugin connects Claude to one Keytomic workspace through the Keytomic MCP server. It adds four skills that run the common SEO workflows with its tools: Website Audits, Search Console reviews, brand profile and settings, and the content calendar with keyword research, articles and hero images.
 
