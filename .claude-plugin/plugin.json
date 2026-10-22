@@ -2,7 +2,7 @@
   "name": "keytomic",
   "displayName": "AI SEO with Keytomic",
   "version": "0.4.2",
-  "description": "AI SEO automation in Claude for Google and AI search: SEO audits, Search Console insights, keyword research, content calendar, articles and hero images. Find top, new, improving and declining rankings, low-hanging fruits, underperforming pages, keyword cannibalization, zombie pages and question queries; inspect URLs and submit sitemaps; plan and run your content calendar; write and edit articles; manage your brand profile, authors and settings; and check plan usage and integrations on your Keytomic workspace.",
+  "description": "The end-to-end AI SEO agent in Claude, for Google and AI search: SEO audits, Search Console insights, keyword research, content calendar, articles and hero images. Find top, new, improving and declining rankings, low-hanging fruits, underperforming pages, keyword cannibalization, zombie pages and question queries; inspect URLs and submit sitemaps; plan and run your content calendar; write and edit articles; manage your brand profile, authors and settings; and check plan usage and integrations. AI SEO automation on your Keytomic workspace.",
   "icon": "./.claude-plugin/icon.png",
   "author": {
     "name": "Keytomic",
@@ -17,6 +17,7 @@
   "documentationUrl": "https://keytomic.com/docs/mcp",
   "supportUrl": "https://keytomic.com/mcp",
   "keywords": [
+    "ai-seo-agent",
     "ai-seo",
     "seo-automation",
     "seo",
