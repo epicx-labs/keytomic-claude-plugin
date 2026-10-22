@@ -1,6 +1,18 @@
-# Keytomic for Claude
+# AI SEO with Keytomic
 
-Keytomic is an SEO platform. This plugin connects Claude to one Keytomic workspace through the Keytomic MCP server. It adds four skills that run the common SEO workflows with its tools: Website Audits, Search Console reviews, brand profile and settings, and the content calendar.
+This plugin brings Keytomic, the end-to-end AI SEO agent, into Claude. It connects Claude to one Keytomic workspace through the Keytomic MCP server. It adds four skills that run the common SEO workflows with its tools: Website Audits, Search Console reviews, brand profile and settings, and the content calendar with keyword research, articles and hero images.
+
+## Keytomic: the end-to-end AI SEO agent
+
+Keytomic is the AI SEO agent that runs the whole SEO cycle for your site, for Google and AI search:
+
+1. **Research**: finds the keywords and topics that your customers search for on Google and in AI search.
+2. **Write**: plans your content calendar and writes on-brand articles with images.
+3. **Publish**: publishes to your site and gets your pages indexed.
+4. **Monitor**: tracks your rankings, your Search Console data, and how often AI search mentions your brand.
+5. **Improve**: refreshes content that loses traffic, finds technical issues, and finds backlink opportunities.
+
+One platform does the work of a keyword tool, an AI writer, a publishing workflow, and a rank tracker: AI SEO automation from the first keyword to the next ranking gain. Plans start at $99/month, or $79/month when you pay yearly, with a free trial. [See pricing](https://keytomic.com/pricing).
 
 ## What the plugin does
 
