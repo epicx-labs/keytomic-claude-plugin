@@ -3,6 +3,7 @@
   "displayName": "Keytomic",
   "version": "0.4.1",
   "description": "SEO work on your Keytomic workspace from Claude: Website Audits, Search Console insights, brand profile and settings, the content calendar, and articles.",
+  "icon": "./.claude-plugin/icon.png",
   "author": {
     "name": "epicX",
     "email": "hi@keytomic.com",
