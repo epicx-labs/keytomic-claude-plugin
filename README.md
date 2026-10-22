@@ -70,6 +70,11 @@ Tool calls that spend credits or start work, such as a new audit, a keyword sear
 | `workspace-setup` | Read and edit the brand profile, the settings and the author profiles, and read the integrations |
 | `content-calendar` | Research keywords, plan and edit the calendar topics, start a calendar run, write and edit articles, and generate hero images |
 
+## Related
+
+- [Keytomic MCP](https://github.com/epicx-labs/keytomic-mcp): install steps for every MCP client, the tool list, the limits and the errors.
+- [AI SEO with Keytomic for Cursor](https://github.com/epicx-labs/keytomic-cursor-plugin): the same skills as a Cursor plugin.
+
 ## Support
 
 Write to hi@keytomic.com. The privacy policy is at [keytomic.com/privacy-policy](https://keytomic.com/privacy-policy).
