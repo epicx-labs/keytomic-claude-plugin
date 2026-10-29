@@ -1,6 +1,6 @@
 # AI SEO with Keytomic
 
-This plugin brings Keytomic, the end-to-end AI SEO agent, into Claude. It connects Claude to one Keytomic workspace through the Keytomic MCP server. It adds six skills that run the common SEO workflows with its tools: Website Audits, Search Console reviews, Google Analytics reports, brand profile and settings, the content calendar with keyword research, articles and hero images, and publishing to your CMS.
+This plugin brings Keytomic, the end-to-end AI SEO agent, into Claude. It connects Claude to one Keytomic workspace through the Keytomic MCP server. It adds ten skills that run the common SEO workflows with its tools: Website Audits, Search Console reviews, Google Analytics reports, brand profile and settings, the content calendar with keyword research, articles and hero images, publishing to your CMS, indexing on Google and Bing, backlinks, Reddit Opportunities, and AI Visibility.
 
 ## Keytomic: the end-to-end AI SEO agent
 
@@ -54,7 +54,7 @@ claude --plugin-dir ./keytomic-claude-plugin
 
 ## Sign in
 
-The first tool call asks you to sign in to Keytomic in your browser and to choose a workspace. In Claude Code, run `/mcp`, select **keytomic**, and complete the sign-in. The connection is a Connected App. Keytomic asks for these MCP Scopes: workspace read and write, audit read and run, Search Console read and write, content read and write, content publish, and analytics read. On the consent page, you can clear a scope that you do not want to give. You can disconnect the Connected App at any time on the Keytomic MCP page in Keytomic, under Connected apps.
+The first tool call asks you to sign in to Keytomic in your browser and to choose a workspace. In Claude Code, run `/mcp`, select **keytomic**, and complete the sign-in. The connection is a Connected App. Keytomic asks for these MCP Scopes: workspace read and write, audit read and run, Search Console read, content read and write, and content publish. It also asks for analytics read, indexing write, and visibility read and write. On the consent page, you can clear a scope that you do not want to give. You can disconnect the Connected App at any time on the Keytomic MCP page in Keytomic, under Connected apps.
 
 If the Connected App does not have a scope, the server refuses the tools of that scope with an HTTP 403 `insufficient_scope` response. This occurs when you cleared the scope on the consent page, or when you connected Keytomic before the content scopes were available. Claude shows an authorization or insufficient scope error for them, sometimes with the text "Keytomic needs approval". This error is not the `permission_denied` tool error, and a role change does not correct it. The other tools continue to operate. First, sign in to Keytomic again and approve all the scopes. In Claude Code, run `/mcp`, select **keytomic**, and sign in again. If the error continues, open the Keytomic MCP page in Keytomic and click **Disconnect** on the app's row under Connected apps. Then connect Keytomic again and approve all the scopes.
 
@@ -62,7 +62,7 @@ If the Connected App does not have a scope, the server refuses the tools of that
 
 The plugin has no code of its own. It declares one remote MCP server, `https://app.keytomic.com/mcp`, and its skills are text files. Claude sends each tool call to that server with your sign-in token. The server reads and writes only the data of the workspace you chose. The plugin sends data to no other destination.
 
-Tool calls that spend credits or start work, such as a new audit, a keyword search, a calendar run, an article, a hero image or a publish to your CMS, happen only after you say yes. Edits to the brand profile and the settings spend no credits.
+Tool calls that spend credits or start work happen only after you say yes. Examples are a new audit, a keyword search, a calendar run, an article, a hero image, and a publish to your CMS. Other examples are an indexing submit, a Reddit scan or reply, and an AI Visibility setup or check. Edits to the brand profile and the settings spend no credits.
 
 ## Skills
 
@@ -74,6 +74,10 @@ Tool calls that spend credits or start work, such as a new audit, a keyword sear
 | `workspace-setup` | Read and edit the brand profile, the settings and the author profiles, and read the integrations |
 | `content-calendar` | Research keywords, plan and edit the calendar topics, start a calendar run, write and edit articles, and generate hero images |
 | `publishing` | Publish an article to a connected CMS as a draft or live, and check where it was published |
+| `indexing` | Read the indexing status of pages on Google and Bing, inspect URLs, and submit URLs and sitemaps |
+| `backlinks` | Read the backlinks and the backlink gaps of a site, and set the competitors of the gap list |
+| `reddit-opportunities` | Find Reddit threads to answer, write reply drafts, and change the scan settings |
+| `ai-visibility` | Set up AI Visibility, edit the prompts and the settings, run a check, and read the report |
 
 ## Related
 
